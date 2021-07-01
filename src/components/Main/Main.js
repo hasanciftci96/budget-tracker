@@ -10,7 +10,7 @@ const Main = () => {
 
     return (
         <Card className={classes.root}>
-            <CardHeader title="Track Expenses" subheader="If you invest instead of buying guac then you can become a billionaire" />
+            <CardHeader title="Track Expenses" subheader="If you invest instead of buying extra guac then you can become a billionaire" />
             <CardContent>
                 <Typography align="center" variant="h5">
                     Total Balance $100

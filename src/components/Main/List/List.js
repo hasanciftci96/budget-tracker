@@ -1,12 +1,15 @@
-import React from "react"
+import React, { useContext } from "react"
 //renaming List as MUIList because its the same as component name so it might throw an error
 import { List as MUIList, ListItem, ListItemAvatar, ListItemText, Avatar, ListItemSecondaryAction, IconButton, Slide } from "@material-ui/core"
 import { Delete, MoneyOff } from "@material-ui/icons"
+import { TrackExpenseContext } from "../../../context/context"
 
 import useStyles from "./styles"
 
 const List = () => {
     const classes = useStyles()
+    const { deleteTransaction } = useContext(TrackExpenseContext)
+
     const transactions = [
         { id: 1, type: "Income", category: "Salary", amount: 50, date: "Tue June 31" },
         { id: 2, type: "Expense", category: "Food", amount: 100, date: "Tue June 30" },
