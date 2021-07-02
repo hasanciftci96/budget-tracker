@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react"
 import { TextField, Typography, Grid, Button, FormControl, InputLabel, Select, MenuItem } from "@material-ui/core"
 import { TrackExpenseContext } from "../../../context/context"
+import Snackbar from "../../SnackBar/Snackbar"
 import { useSpeechContext } from "@speechly/react-client"
 import { v4 as uuidv4 } from "uuid"
 
@@ -20,11 +21,13 @@ const Form = () => {
     const [formData, setFormData] = useState(initialState)
     const { addTransaction } = useContext(TrackExpenseContext)
     const { segment } = useSpeechContext()
+    const [open, setOpen] = useState(false)
 
     const createTransaction = () => {
         if (Number.isNaN(Number(formData.amount)) || !formData.date.includes("-")) return //if is for error handling
         const transaction = { ...formData, amount: Number(formData.amount), id: uuidv4() }
 
+        setOpen(true)
         addTransaction(transaction)
         setFormData(initialState)
     }
@@ -75,6 +78,7 @@ const Form = () => {
 
     return (
         <Grid container spacing={2}>
+            <Snackbar open={open} setOpen={setOpen} />
             <Grid item xs={12}>
                 <Typography align="center" variant="subtitle2" gutterBottom>
                     {segment ? <>{segment.words.map((word) => word.value).join(" ")}</> : null}

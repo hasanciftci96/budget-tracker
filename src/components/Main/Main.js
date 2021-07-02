@@ -17,11 +17,10 @@ const Main = () => {
                 <Typography align="center" variant="h5">
                     Total Balance ${balance}
                 </Typography>
-                <Typography variant="subtitle1" style={{ lineHeight: "1.5em", marginTop: "20px" }}>
-                    {/* Info card */}
-                    Speechly say something
+                <Typography variant="subtitle1" style={{ lineHeight: "1.5em", marginTop: "20px", textAlign: "center", padding: "0 10%" }}>
+                    Try saying: add income/expense of 100$ for salary on next monday
                 </Typography>
-                <Divider />
+                <Divider className={classes.divider} />
                 <Form />
             </CardContent>
             <CardContent className={classes.cardContent}>
