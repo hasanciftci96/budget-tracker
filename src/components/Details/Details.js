@@ -3,6 +3,7 @@ import { Card, CardHeader, CardContent, Typography } from "@material-ui/core"
 import { Doughnut } from "react-chartjs-2"
 import useTransactions from "../../useTransactions"
 
+//This is the left and right sides of the screen with the bar chart
 import useStyles from "./styles"
 
 const Details = ({ title }) => {

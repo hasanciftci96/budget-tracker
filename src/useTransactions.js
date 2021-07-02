@@ -25,8 +25,6 @@ const useTransactions = (title) => {
     const total = transactionsPerType.reduce((acc, currVal) => (acc += currVal.amount), 0) //add everything up for income since we will be displaying the total income too
     const categories = title === "Income" ? incomeCategories : expenseCategories
 
-    console.log({ transactionsPerType, total, categories })
-
     transactionsPerType.forEach((t) => {
         //transactionsPerType is the ones with id in then and categories is the second array
         const category = categories.find((c) => c.type === t.category)
