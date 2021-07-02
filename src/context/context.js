@@ -17,7 +17,7 @@ export const Provider = ({ children }) => {
 
     //Action Creators
     const deleteTransaction = (id) => {
-        dispatch({ type: "DELETE_TRANSACTION", payload: id })
+        dispatch({ type: "DELETE_TRANSACTION", payload: id }) //unutuma dispatch'in icindeki tum seye action deniyor
     }
 
     const addTransaction = (transaction) => {
@@ -30,6 +30,7 @@ export const Provider = ({ children }) => {
             value={{
                 deleteTransaction: deleteTransaction,
                 addTransaction: addTransaction,
+                transactions: transactions,
             }}
         >
             {children}
